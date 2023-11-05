@@ -42,15 +42,22 @@
             const listItem = document.createElement("li")
             const span = document.createElement("span")
             const deleteButton = document.createElement("button")
-
+            
             span.textContent = userInput
             deleteButton.textContent = 'Delete'
             listItem.appendChild(span)
             listItem.appendChild(deleteButton)
 
             list.appendChild(listItem)
-        }
 
+            // Whenever an item is added or removed, the text box should be ready for input
+            input.focus()
+
+            deleteButton.addEventListener('click', () => {
+                listItem.remove()
+                input.focus()
+            })
+        }
         
     </script>
   </body>
